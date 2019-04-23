@@ -23,6 +23,7 @@
     <ProjectGuid>{4D81DC26-7BBE-4E17-A722-EE26DCF335E7}</ProjectGuid>
     <RootNamespace>Time</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SortCompare</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
