@@ -1,7 +1,7 @@
 #pragma once
 
 #include<array>
-
+enum typeofsort { none, bubsort, stdsort, mrgsort, qcksort, rdxsort };
 class sortings
 {
 

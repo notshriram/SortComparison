@@ -1,6 +1,7 @@
 #include "sortings.h"
 #include <algorithm>
-bool stdsort = false, bubsort = false;
+//bool stdsort = false, bubsort = false;
+typeofsort currenttype=none;
 void swap(int& a, int& b) {
 	a = a + b;
 	b = a - b;
@@ -19,14 +20,12 @@ void sortings::bubblesort() {
 			if (arrayin[j] > arrayin[j + 1])
 				swap(arrayin[j], arrayin[j + 1]);
 	}
-	bubsort = true;
-	stdsort = false;
+	currenttype = bubsort;
 
 }
 void sortings::standardsort() {
 	std::sort(arrayin.begin(),arrayin.end());
-	bubsort = false;
-	stdsort = true;
+	currenttype = stdsort;
 }
 void sortings::populate() {
 	int i;

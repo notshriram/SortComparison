@@ -3,7 +3,7 @@
 #include "sortings.h"
 #include <chrono>
 #include <thread>
-extern bool stdsort ,bubsort ;
+extern typeofsort currenttype;
 using namespace std::literals::chrono_literals;
 class timer
 {

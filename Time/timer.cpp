@@ -1,7 +1,6 @@
 #include "timer.h"
 #include<iostream>
-
-
+bool hasStarted = false;
 timer::timer()
 {
 }
@@ -10,8 +9,10 @@ void timer::setIterations(int x) {
 }
 void timer::start() {
 	starttime = std::chrono::high_resolution_clock::now();
+	hasStarted = true;
 }
 void timer::stop() {
+	if (!hasStarted) { std::cerr << "timer not started yet"; return; }
 	endtime = std::chrono::high_resolution_clock::now();
 	dure += endtime - starttime;
 }
@@ -25,8 +26,14 @@ void timer::reset() {
 	dure = 0s;
 }
 void timer::getavgtime() {
-	if(bubsort)std::cout << "Time taken for Bubblesort: ";
-	if(stdsort)std::cout << "TIme taken for Standard Library Sort: ";
+	switch (currenttype) {
+	case bubsort:std::cout << "Time taken for Bubblesort: "; break;
+	case stdsort:std::cout << "TIme taken for Standard Library Sort: "; break;
+	case qcksort:std::cout << "TIme taken for Standard Library Sort: "; break;
+	case rdxsort:std::cout << "TIme taken for Standard Library Sort: "; break;
+	case mrgsort:std::cout << "TIme taken for Standard Library Sort: "; break;
+	default: std::cerr << "sort type unknown";
+	}
 	std::cout<<dure.count()/iterations<<" secs"<<std::endl;
 }
 
