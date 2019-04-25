@@ -28,10 +28,11 @@ void timer::reset() {
 void timer::getavgtime() {
 	switch (currenttype) {
 	case bubsort:std::cout << "Time taken for Bubblesort: "; break;
-	case stdsort:std::cout << "TIme taken for Standard Library Sort: "; break;
-	case qcksort:std::cout << "TIme taken for Standard Library Sort: "; break;
-	case rdxsort:std::cout << "TIme taken for Standard Library Sort: "; break;
-	case mrgsort:std::cout << "TIme taken for Standard Library Sort: "; break;
+	case stdsort:std::cout << "TIme taken for Standard Library Sort: ";break;
+	case qcksort:std::cout << "TIme taken for Quick Sort: "; break;
+	case inssort:std::cout << "TIme taken for Insertion Sort using STL methods: "; break;
+	case mrgsort:std::cout << "TIme taken for Merge Sort: "; break;
+	case selsort:std::cout << "TIme taken for Selection Sort: "; break;
 	default: std::cerr << "sort type unknown";
 	}
 	std::cout<<dure.count()/iterations<<" secs"<<std::endl;

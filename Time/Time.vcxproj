@@ -129,6 +129,7 @@
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AuxiliarySort.h" />
     <ClInclude Include="sortings.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>

@@ -6,18 +6,19 @@
 #include "timer.h"
 void sorttimecheck(sortings& list,timer& clock,const int t,const typeofsort type) {
 	for (int i = 0; i < t; i++) {
+		list.populate();
 		clock.start();
 		//here I assume switch takes negligible time or atleast fairly equal time for each case.
 		switch (type) {
 		case bubsort:list.bubblesort(); break;
 		case stdsort:list.standardsort(); break;
-		case qcksort:break;
-		case rdxsort:break;
-		case mrgsort:break;
+		case qcksort:list.quicksort(); break;
+		case inssort:list.insertsort(); break;
+		case mrgsort:list.mergesort(); break;
+		case selsort:list.selectsort(); break;
 		default:std::cerr << "type of sort undefined";
 		}
 		clock.stop();
-		list.populate();
 	}
 	clock.getavgtime();
 	clock.reset();
@@ -32,7 +33,10 @@ int main () {
 	clock.setIterations(t);
 	sorttimecheck(list,clock,t,bubsort);
 	sorttimecheck(list, clock, t, stdsort);
-
-	//for (auto i : list.arrayin)std::cout << i << "\n";
+	sorttimecheck(list, clock, t, qcksort);
+	sorttimecheck(list, clock, t, mrgsort);
+	sorttimecheck(list, clock, t, selsort);
+	sorttimecheck(list, clock, t, inssort);
+	//for (auto i : list.arrayin)std::cout << i << " ";
 	system("pause");
 }

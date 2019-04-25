@@ -1,7 +1,8 @@
 #pragma once
 
 #include<array>
-enum typeofsort { none, bubsort, stdsort, mrgsort, qcksort, rdxsort };
+enum typeofsort { none, bubsort, stdsort, mrgsort, qcksort, inssort,selsort };
+void swap(int& a, int& b);
 class sortings
 {
 
@@ -12,6 +13,9 @@ public:
 	void populate();
 	void bubblesort();
 	void standardsort();
-
+	void insertsort();
+	void quicksort();
+	void mergesort();
+	void selectsort();
 	virtual ~sortings();
 };
