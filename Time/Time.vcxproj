@@ -130,8 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AuxiliarySort.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="sortings.h" />
     <ClInclude Include="timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SortCompare.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
